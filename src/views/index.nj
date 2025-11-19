@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        {% block VIEW_HEAD %}
+            <title>DEFAULT VIEW_BODY TITLE</title>
+            {% block VIEW_HEAD_METADATA   %}
+                <meta charset={{ page.meta.charset }} >
+                <meta name="description" content={{ page.meta.description }}>
+                <meta name="keywords" content={{ page.meta.keywords }} >
+                <meta name="author" content={{ page.meta.author }} >
+                <meta name="viewport" content={{ page.meta.viewport }} >
+            {% endblock %}
+            {% block VIEW_HEAD_STYLES %}
+                <link rel="stylesheet" href="./public/css/bundle.css" />
+            {% endblock %}
+            {% block VIEW_PRE_JS %}
+                <script type="text/javascript" src="./public/js/bundlePre.js" ></script>
+            {% endblock %}
+        {% endblock %}
+    </head>
+
+
+    <body class="VIEW_OUTER_BODY">
+        {% block VIEW_BODY %}
+        <main class="VIEW_BODY">    VIEW_BODY
+            {% block VIEW_BODY_HEADER %}
+               <header class="VIEW_BODY_HEADER"> VIEW_BODY_HEADER  </header>
+            {% endblock %}
+
+            {% block VIEW_BODY_CONTENT %}
+                <main class="VIEW_BODY_CONTENT"> VIEW_BODY_CONTENT </main>
+            {% endblock %}
+
+            {% block VIEW_BODY_FOOTER %}
+                <footer class="VIEW_BODY_FOOTER"> VIEW_BODY_FOOTER </footer>
+            {% endblock %}
+        </main>
+        {% endblock %}
+
+        {% block VIEW_POST_JS %}
+            <script type="text/javascript" src="./public/js/bundlePost.js" ></script>
+        {% endblock %}
+    </body>
+
+</html>
